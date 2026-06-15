@@ -50,7 +50,7 @@ class SinCosEigenfunctions(EigenfunctionsWithAdditionTheorem):
         return B.concat(*values, axis=1)[:, : self._num_eigenfunctions]  # [N, M]
 
     def _addition_theorem(
-        self, X: B.Numeric, X2: Optional[B.Numeric] = None, **kwargs
+        self, X: B.Numeric, X2: Optional[B.Numeric] = None, cache: list = [], **kwargs
     ) -> B.Numeric:
         r"""
         Returns the result of applying the addition theorem to sum over all
